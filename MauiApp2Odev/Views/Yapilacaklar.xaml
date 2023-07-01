@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2Odev.Views.Yapilacaklar"
+             Title="Yapilacaklar">
+    <StackLayout Padding="20">
+        <Label Text="Yapılacak Görev" FontSize="20" HorizontalOptions="Center" Margin="0,0,0,20" />
+        <Entry x:Name="txtGorev" Placeholder="Görevi Girin" Margin="0,0,0,10" />
+        <ListView x:Name="lstGorevler" ItemSelected="lstGorevler_ItemSelected" Margin="0,10,0,0">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <CheckBox Grid.Column="0" IsChecked="{Binding IsSelected, Mode=TwoWay}" VerticalOptions="Center" />
+                            <Label Grid.Column="1" Text="{Binding GorevAdi}" VerticalOptions="Center" />
+                            <Button Grid.Column="2" Clicked="GorevDetay_Clicked" ImageSource="duzenle.png" Margin="10,0,0,0" HeightRequest="20"/>
+                            <Button Grid.Column="3" Clicked="Sil_Clicked" ImageSource="sil.png" Margin="10,0,0,0" HeightRequest="20"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Ekle" Clicked="Ekle_Clicked" ImageSource="ekleme.png" Margin="0,10,0,0" HeightRequest="20" HorizontalOptions="End">
+        </Button>
+    </StackLayout>
+</ContentPage>

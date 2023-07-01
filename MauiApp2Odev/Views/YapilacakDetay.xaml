@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2Odev.Views.YapilacakDetay">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="Görev Detayı:" />
+        <Entry x:Name="txtGorevDetay" Grid.Row="1" />
+
+        <Label Grid.Row="2" Text="Tarih:" />
+        <DatePicker x:Name="datePicker" Grid.Row="3" />
+
+        <Label Grid.Row="4" Text="Saat:" />
+        <TimePicker x:Name="timePicker" Grid.Row="5" />
+
+        <Button Text="Kaydet" Clicked="Kaydet_Clicked" Grid.Row="6" />
+        <Button Text="Güncelle" Clicked="Guncelle_Clicked" Grid.Row="7" />
+        <Button Text="Geri" Clicked="Geri_Clicked" Grid.Row="8" />
+    </Grid>
+</ContentPage>

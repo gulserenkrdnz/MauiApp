@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp2Odev.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+             Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="me.png"
+                HeightRequest="200"
+                HorizontalOptions="Center" />
+
+            <Label
+                Text="GÜLSEREN KARADENİZ"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            <Label
+                Text="19010310028"
+                SemanticProperties.HeadingLevel="Level2"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            <Label
+                Text="Bartın Üniversitesi Bilgisayar Mühendisliği"
+                SemanticProperties.HeadingLevel="Level3"
+                FontSize="32"
+                HorizontalOptions="Center" />
+            <Label
+                Text="ÖDEV-2"
+                SemanticProperties.HeadingLevel="Level4"
+                FontSize="32"
+                HorizontalOptions="Center" />
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

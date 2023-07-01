@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MauiApp2Odev.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MauiApp2Odev"
+    xmlns:views="clr-namespace:MauiApp2Odev.Views"
+    Shell.FlyoutBehavior="Flyout">
+    
+    <Shell.MenuItemTemplate>
+        <DataTemplate>
+            <StackLayout Orientation="Vertical">
+                <Image Source="{Binding FlyoutIcon}" HeightRequest="60" WidthRequest="60" />
+                <Label Text="{Binding Title}" VerticalTextAlignment="Center" FontSize="Large" />
+            </StackLayout>
+        </DataTemplate>
+    </Shell.MenuItemTemplate>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            Icon="anasayfa.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+
+        <ShellContent
+            Title="Döviz Kurları"
+            Icon="dov.png"
+            ContentTemplate="{DataTemplate views:DovizKurlari}"
+            Route="DovizKurlari" />
+
+        <ShellContent
+            Title="Hava Durumu"
+            Icon="hava.png"
+            ContentTemplate="{DataTemplate views:HavaDurumu}"
+            Route="HavaDurumu" />
+
+        <ShellContent
+            Title="Haberler"
+            Icon="haber.png"
+            ContentTemplate="{DataTemplate views:Haberler}"
+            Route="Haberler" />
+
+        <ShellContent
+                Title="Yapılacaklar" 
+                Icon="liste.png"
+                ContentTemplate="{DataTemplate views:Yapilacaklar}"
+                Route="Yapilacaklar" />
+
+
+        <ShellContent
+            Title="Ayarlar"
+            Icon="ayarlar.png"
+            ContentTemplate="{DataTemplate views:Ayarlar}"
+            Route="Ayarlar" />
+    </FlyoutItem>
+</Shell>

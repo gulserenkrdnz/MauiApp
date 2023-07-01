@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              x:Class="MauiApp2Odev.Views.Haberler"
+              Title="Haberler" Padding="20"
+              Loaded="OnAppearing">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="guncelleme.png" Clicked="OnAppearing" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout>
+        <RefreshView  Refreshing="OnAppearing" x:Name="refreshView">
+            
+            <Grid RowDefinitions="Auto,*">
+                
+                <CollectionView Grid.Row="0" x:Name="lstKategoriler"
+                                SelectionChanged="lstKategoriler_SelectionChanged"
+                                SelectionMode="Single">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Horizontal" ItemSpacing="10"/>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="5">
+                                <Label Text="{Binding Baslik}"
+                                       FontSize="Medium"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <CollectionView Grid.Row="1" x:Name="lstHaberler"
+                   
+                                SelectionChanged="lstHaberler_SelectionChanged"
+                                SelectionMode="Single">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical" ItemSpacing="15" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="10">
+                                <Image Source="{Binding enclosure.link}"/>
+                                <Label Text="{Binding title}"/>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Margin="5">
+                                    <Label Text="{Binding author}"/>
+                                    <Label Text=" | "/>
+                                    <Label Text="{Binding pubDate}"/>
+                                </StackLayout>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </RefreshView>
+    </StackLayout>
+
+</ContentPage>
